@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/09/18 16:43:23 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:11:01 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,82 @@ void	sb(t_stack **stack_b)
 	(*stack_b)->next = temp; // El nuevo primer nodo apunta al antiguo 1er nodo
 }
 
+void	ra(t_stack **stack_a)
+{
+	t_stack	*temp;
+	t_stack *last;
+
+	if (!*stack_a || !(*stack_a)->next)
+		return ;
+	temp = *stack_a; // Guardamos el primer nodo
+	*stack_a = (*stack_a)->next; // Posicionamos el segundo nodo como primero
+	last = *stack_a; // Guardamos una referencia de la lista
+	while (last->next) // Recorremos la lista con su referencia
+		last = last->next;
+	last->next = temp; // Apuntamos con el último nodo al que antes era el primero
+	temp->next = NULL; // Ahora el antiguo primer nodo es el último, por tanto apunta a NULL
+}
+
+void	rb(t_stack **stack_b)
+{
+	t_stack	*temp;
+	t_stack *last;
+
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
+	temp = *stack_b; // Guardamos el primer nodo
+	*stack_b = (*stack_b)->next; // Posicionamos el segundo nodo como primero
+	last = *stack_b; // Guardamos una referencia de la lista
+	while (last->next) // Recorremos la lista con su referencia
+		last = last->next;
+	last->next = temp; // Apuntamos con el último nodo al que antes era el primero
+	temp->next = NULL; // Ahora el antiguo primer nodo es el último, por tanto apunta a NULL
+}
+
+void	rr(t_stack **stack_a, t_stack **stack_b)
+{
+	ra(stack_a);
+	rb(stack_b);
+}
+
+void	rra(t_stack **stack_a)
+{
+	t_stack	*pre_last;
+	t_stack	*last;
+
+	if (!*stack_a || !(*stack_a)->next)
+		return ;
+	pre_last = *stack_a; // Guardamos la referencia del primer nodo
+	while (pre_last->next && pre_last->next->next) // Recorremos la lista hasta el penúltimo nodo
+		pre_last = pre_last->next;
+	last = pre_last->next; // Guardamos la referencia del último nodo
+	pre_last->next = NULL; // Convertimos el penúltimo nodo en el nuevo último nodo
+	last->next = *stack_a; // Hacemos que el antiguo primer nodo sea el primero, haciendo que apunte al antiguo primer nodo, ahora segundo
+	*stack_a = last; // Ahora el puntero a la cabeza de la lista apunta al antiguo último nodo
+}
+
+void	rrb(t_stack **stack_b)
+{
+	t_stack	*pre_last;
+	t_stack	*last;
+
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
+	pre_last = *stack_b; // Guardamos la referencia del primer nodo
+	while (pre_last->next && pre_last->next->next) // Recorremos la lista hasta el penúltimo nodo
+		pre_last = pre_last->next;
+	last = pre_last->next; // Guardamos la referencia del último nodo
+	pre_last->next = NULL; // Convertimos el penúltimo nodo en el nuevo último nodo
+	last->next = *stack_b; // Hacemos que el antiguo primer nodo sea el primero, haciendo que apunte al antiguo primer nodo, ahora segundo
+	*stack_b = last; // Ahora el puntero a la cabeza de la lista apunta al antiguo último nodo
+}
+
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	rra(stack_a);
+	rrb(stack_b);
+}
+
 void print_stack(t_stack *stack) //TESTER
 {
     while (stack)
@@ -98,10 +174,10 @@ int	main(int argc, char **argv)
 	int	i = argc - 1;
 
 	while (i >= 1)
-		ft_push(&stack_a, ft_new_node(atoi(argv[i--]))); //ft_atoi TODO
+		ft_push(&stack_a, ft_new_node(atoi(argv[i--]))); //ft_atoi TODO (Makefile)
 	//TESTS
 	print_stack(stack_a);
-	sa(&stack_a);
+	rra(&stack_a);
 	write(1, "\n", 1);
 	print_stack(stack_a);
 
