@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/09/23 17:11:01 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:37:31 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	pa(t_stack **src, t_stack **dst)
 	temp = *src;
 	*src = (*src)->next;
 	//Push a
-	ft_push(dst, temp);	
+	ft_push(dst, ft_new_node(temp->value));	
 }
 
 void	pb(t_stack **src, t_stack **dst)
@@ -55,7 +55,7 @@ void	pb(t_stack **src, t_stack **dst)
 	temp = *src;
 	*src = (*src)->next;
 	//Push b
-	ft_push(dst, temp);	
+	ft_push(dst, ft_new_node(temp->value));	
 }
 
 void	sa(t_stack **stack_a)
@@ -63,6 +63,8 @@ void	sa(t_stack **stack_a)
 	t_stack	*temp;
 
 	//Comprobar que el stack tiene más de un nodo
+	if (!*stack_a || !(*stack_a)->next)
+		return ;
 	//Swap
 	temp = *stack_a; // Almacenamos el primer nodo
 	*stack_a = (*stack_a)->next; // Movemos el segundo nodo al frente
@@ -75,11 +77,19 @@ void	sb(t_stack **stack_b)
 	t_stack	*temp;
 
 	//Comprobar que el stack tiene más de un nodo
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
 	//Swap
 	temp = *stack_b; // Almacenamos el primer nodo
 	*stack_b = (*stack_b)->next; // Movemos el segundo nodo al frente
 	temp->next = (*stack_b)->next; // Actualizamos el next del (antiguo) 1er nodo
 	(*stack_b)->next = temp; // El nuevo primer nodo apunta al antiguo 1er nodo
+}
+
+void	ss(t_stack **stack_a, t_stack **stack_b)
+{
+	sa(stack_a);
+	sb(stack_b);
 }
 
 void	ra(t_stack **stack_a)
@@ -160,11 +170,21 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 
 void print_stack(t_stack *stack) //TESTER
 {
-    while (stack)
-    {
-        printf("%d\n", stack->value);
-        stack = stack->next;
-    }
+	while (stack)
+	{
+		printf("%d ", stack->value);
+		stack = stack->next;
+	}
+}
+
+void	print_visual_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	printf("A: ");
+	print_stack(stack_a);
+	printf("\n");
+	printf("B: ");
+	print_stack(stack_b);
+	printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -172,14 +192,18 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a = NULL;
 	t_stack	*stack_b = NULL;
 	int	i = argc - 1;
-
+	// TODO Comprobar input correcto (int, no se repiten, forma de entrada [string o simple / ambos]...
 	while (i >= 1)
 		ft_push(&stack_a, ft_new_node(atoi(argv[i--]))); //ft_atoi TODO (Makefile)
 	//TESTS
-	print_stack(stack_a);
-	rra(&stack_a);
-	write(1, "\n", 1);
-	print_stack(stack_a);
+	print_visual_stacks(stack_a, stack_b);
+	printf("\nPB\n");
+	pb(&stack_a, &stack_b);
+	print_visual_stacks(stack_a, stack_b);
+	printf("\nPA\n");
+	pa(&stack_b, &stack_a);
+	print_visual_stacks(stack_a, stack_b);
 
+//	TODO Leaks: Borrar y liberar pilas al finalizar programa (?)
 	return 0;
 }
