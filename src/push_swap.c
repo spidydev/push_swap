@@ -6,24 +6,13 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/03 15:37:31 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/09 19:44:24 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_new_node(int value)
-{
-	t_stack	*new;
-
-	new = (t_stack *)malloc(sizeof(t_stack));
-	if(!new)
-		return (NULL);
-	new->value = value;
-	new->next = NULL;
-	return (new);
-}
-
+// CAMBIAR OPERACIONES: HACER BASICAS COMPLETAS FT_PUSH,SWAP,ROTATE,REVERSE ROTATE. En las concretas solo pasar stacks e imprimir op.
 void	ft_push(t_stack **stack, t_stack *item)
 {
 	if (!stack || !item)
@@ -177,7 +166,7 @@ void print_stack(t_stack *stack) //TESTER
 	}
 }
 
-void	print_visual_stacks(t_stack *stack_a, t_stack *stack_b)
+void	print_visual_stacks(t_stack *stack_a, t_stack *stack_b) //TESTER
 {
 	printf("A: ");
 	print_stack(stack_a);
@@ -189,21 +178,26 @@ void	print_visual_stacks(t_stack *stack_a, t_stack *stack_b)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a = NULL;
-	t_stack	*stack_b = NULL;
-	int	i = argc - 1;
-	// TODO Comprobar input correcto (int, no se repiten, forma de entrada [string o simple / ambos]...
-	while (i >= 1)
-		ft_push(&stack_a, ft_new_node(atoi(argv[i--]))); //ft_atoi TODO (Makefile)
-	//TESTS
-	print_visual_stacks(stack_a, stack_b);
-	printf("\nPB\n");
-	pb(&stack_a, &stack_b);
-	print_visual_stacks(stack_a, stack_b);
-	printf("\nPA\n");
-	pa(&stack_b, &stack_a);
-	print_visual_stacks(stack_a, stack_b);
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-//	TODO Leaks: Borrar y liberar pilas al finalizar programa (?)
-	return 0;
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc < 2)
+	{
+		printf("Error\n"); //TODO libft+printf
+		exit(1);
+	}
+	stack_a = *stack_init(&stack_a, argv, argc); //TODO
+	if (!stack_a)
+	{
+		printf("Error\n"); //TODO libft+printf
+		exit(1);
+	}
+	//TEST
+	print_visual_stacks(stack_a, stack_b);
+	//push_swap(&stack_a, &stack_b); //TODO
+	free_stack(&stack_a);
+	free_stack(&stack_b);
+	return (0);
 }

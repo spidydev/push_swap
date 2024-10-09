@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:45 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/09/18 14:58:41 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/09 19:42:40 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <stdbool.h>
+# include <limits.h>
+# include "../libft/libft.h"
 
 
 typedef struct	s_stack
@@ -26,4 +29,17 @@ typedef struct	s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+//INIT
+t_stack	*ft_new_node(int value);
+void	stack_add_back(t_stack **stack_a, t_stack *new);
+t_stack	**stack_init(t_stack **stack_a, char **argv, int argc);
+
+//VALIDATE
+bool	ft_is_number(char *s);
+bool	ft_is_int(char *s);
+bool	check_duplicate(t_stack **stack_a, int nbr);
+
+//FREE
+void	free_stack(t_stack **stack);
+void	free_and_exit(t_stack **stack_a, t_stack **stack_b);
 #endif
