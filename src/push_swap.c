@@ -6,14 +6,14 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/10 11:58:40 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:20:50 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // CAMBIAR OPERACIONES: HACER BASICAS COMPLETAS FT_PUSH,SWAP,ROTATE,REVERSE ROTATE. En las concretas solo pasar stacks e imprimir op.
-void	ft_push(t_stack **stack, t_stack *item)
+/*void	ft_push(t_stack **stack, t_stack *item)
 {
 	if (!stack || !item)
 		return ;
@@ -156,7 +156,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	rra(stack_a);
 	rrb(stack_b);
 }
-
+*/
 void print_stack(t_stack *stack) //TESTER
 {
 	while (stack)
@@ -195,6 +195,15 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	//TEST
+	print_visual_stacks(stack_a, stack_b);
+	pb(&stack_b, &stack_a);
+	pb(&stack_b, &stack_a);
+	pb(&stack_b, &stack_a);
+	print_visual_stacks(stack_a, stack_b);
+	rra(&stack_a);
+	rrb(&stack_b);
+	print_visual_stacks(stack_a, stack_b);
+	rrr(&stack_a, &stack_b);
 	print_visual_stacks(stack_a, stack_b);
 	//push_swap(&stack_a, &stack_b); //TODO
 	free_stack(&stack_a);
