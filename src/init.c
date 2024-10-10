@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:40:36 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/09 19:41:05 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:52:38 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_stack	**stack_init(t_stack **stack_a, char **argv, int argc)
 	int	j;
 
 	i = 1;
+	nbr = 0;
 	while (i < argc)
 	{
 		substring = ft_split(argv[i], 32); //TOLINK

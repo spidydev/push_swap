@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/09 19:44:24 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:58:40 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ int	main(int argc, char **argv)
 		printf("Error\n"); //TODO libft+printf
 		exit(1);
 	}
-	stack_a = *stack_init(&stack_a, argv, argc); //TODO
+	stack_a = *stack_init(&stack_a, argv, argc);
 	if (!stack_a)
 	{
 		printf("Error\n"); //TODO libft+printf

@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:26:43 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/09 19:20:20 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:49:46 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ bool	check_duplicate(t_stack **stack_a, int nbr)
 	t_stack *current;
 
 	if (!stack_a || !(*stack_a))
-		return (1);
+		return (0);
 	current = *stack_a;
 	while (current)
 	{

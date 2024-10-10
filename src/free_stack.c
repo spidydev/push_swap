@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:04:19 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/09 19:23:44 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:57:12 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 void	free_stack(t_stack **stack)
 {
 	t_stack	*node;
+	t_stack	*next_node;
 
 	if (!stack || !*stack)
 		return ;
 	while (*stack)
 	{
 		node = *stack;
+		next_node = (*stack)->next;
 		free(node);
-		*stack = (*stack)->next;
+		*stack = next_node;
 	}
 	*stack = NULL;
 }
