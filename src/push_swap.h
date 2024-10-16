@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:45 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/16 15:18:57 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:58:02 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 //PUSH_SWAP
 int	stack_len(t_stack **stack);
 void	get_index(t_stack **stack_a);
+bool	is_sorted(t_stack **stack_a);
 //FREE
 void	free_stack(t_stack **stack);
 void	free_and_exit(t_stack **stack_a, t_stack **stack_b);

@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:48:31 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/16 16:01:37 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:57:32 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ int	main(int argc, char **argv)
 	//TEST
 	print_visual_stacks(stack_a, stack_b);
 	printf("\nStack length is: %d\n", stack_len(&stack_a));
+	if (is_sorted(&stack_a))
+		printf("\nIs sorted!\n");
+	else
+		printf("\nNot sorted!\n");
 	get_index(&stack_a);
 
 	t_stack	*tmp;
