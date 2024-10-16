@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:40:36 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/10 11:52:38 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:19:36 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,22 @@ void	free_substr(char **substr)
 	free(substr);
 }
 
+static void	init_values(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = *stack;
+	while (tmp)
+	{
+		tmp->index = -1;
+		tmp->pos = -1;
+		tmp->target_pos = -1;
+		tmp->cost_a = -1;
+		tmp->cost_b = -1;
+		tmp = tmp->next;
+	}
+}
+
 t_stack	**stack_init(t_stack **stack_a, char **argv, int argc)
 {
 	char	**substring;
@@ -79,5 +95,6 @@ t_stack	**stack_init(t_stack **stack_a, char **argv, int argc)
 		free_substr(substring);
 		i++;
 	}
+	init_values(stack_a);
 	return (stack_a);
 }

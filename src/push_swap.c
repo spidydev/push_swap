@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/16 14:37:13 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:45:22 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,34 @@ int	stack_len(t_stack **stack)
 	}
 	return (len);
 }
-/*
+
 void	get_index(t_stack **stack_a)
 {
-	
-}
+	t_stack	*tmp;
+	int	max;
+	int	len;
 
+	len = stack_len(stack_a);
+	while(len > 0)
+	{
+		tmp = *stack_a;
+		max = INT_MIN;
+		while (tmp)
+		{
+			if (tmp->value > max && tmp->index == -1)
+				max = tmp->value;
+			tmp = tmp->next;
+		}
+		tmp = *stack_a;
+		while (tmp)
+		{
+			if (tmp->value == max)
+				tmp->index = len--;
+			tmp = tmp->next;
+		}
+	}
+}
+/*
 void	is_sorted(t_stack **stack_a)
 {
 }
