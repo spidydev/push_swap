@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:45 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/10 16:23:31 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:30:18 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@
 typedef struct	s_stack
 {
 	int	value;
+	int	index;
+	int	pos;
+	int	target_pos;
+	int	cost_a;
+	int	cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -55,6 +60,9 @@ void	ft_reverse_rotate(t_stack **stack);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+
+//PUSH_SWAP
+int	stack_len(t_stack **stack);
 
 //FREE
 void	free_stack(t_stack **stack);
