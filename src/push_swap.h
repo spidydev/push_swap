@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:45 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/16 18:58:02 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:16:35 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,15 @@ void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 //PUSH_SWAP
+void	push_swap(t_stack **stack_a, t_stack **stack_b);
 int	stack_len(t_stack **stack);
 void	get_index(t_stack **stack_a);
 bool	is_sorted(t_stack **stack_a);
+int	find_max(t_stack **stack);
+void	sort_three(t_stack **stack_a);
+void	big_sort(t_stack **stack_a, t_stack **stack_b);
+void	push_to_b(t_stack **stack_a, t_stack **stack_b);
+
 //FREE
 void	free_stack(t_stack **stack);
 void	free_and_exit(t_stack **stack_a, t_stack **stack_b);

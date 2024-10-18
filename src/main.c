@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:48:31 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/16 18:57:32 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:31:44 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,6 @@ int	main(int argc, char **argv)
 		printf("\nIs sorted!\n");
 	else
 		printf("\nNot sorted!\n");
-	get_index(&stack_a);
-
-	t_stack	*tmp;
-
-	tmp = stack_a;
-	printf("\n");
-	while (tmp)
-	{
-		printf("Node %d index is: %d\n", tmp->value, tmp->index);
-		tmp = tmp->next;
-	}
 	/*
 	pb(&stack_b, &stack_a);
 	pb(&stack_b, &stack_a);
@@ -77,7 +66,14 @@ int	main(int argc, char **argv)
 	print_visual_stacks(stack_a, stack_b);
 	rrr(&stack_a, &stack_b);
 	print_visual_stacks(stack_a, stack_b);*/
-	//push_swap(&stack_a, &stack_b); //TODO
+	printf("\nPROGRAM OUTPUT:\n");
+	push_swap(&stack_a, &stack_b); //TODO
+	printf("\n--STACKS--\n");
+	print_visual_stacks(stack_a, stack_b);
+	if (is_sorted(&stack_a))
+		printf("\nIs sorted!\n");
+	else
+		printf("\nNot sorted!\n");
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
