@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:48:31 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/18 13:31:44 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:39:19 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,28 @@ int	main(int argc, char **argv)
 	push_swap(&stack_a, &stack_b); //TODO
 	printf("\n--STACKS--\n");
 	print_visual_stacks(stack_a, stack_b);
+	t_stack *tmpa = stack_a;
+	t_stack *tmpb = stack_b;
+	printf("\nSTACK A POSITIONS + INDEX\n");
+	while (tmpa)
+	{
+		printf("%d (idx %d) node current position is: %d.\n", tmpa->value, tmpa->index, tmpa->current_pos);
+		tmpa = tmpa->next;
+	}
+	printf("\nSTACK B POSITIONS + INDEX\n");
+	while (tmpb)
+	{
+		printf("%d (idx %d) node current position is: %d.\n", tmpb->value, tmpb->index, tmpb->current_pos);
+		tmpb = tmpb->next;
+	}
+	tmpa = stack_a;
+	tmpb = stack_b;
+	printf("\nSTACK B TARGET POS\n");
+	while (tmpb)
+	{
+		printf("%d node target position in A is: %d.\n", tmpb->value, tmpb->target_pos);
+		tmpb = tmpb->next;
+	}
 	if (is_sorted(&stack_a))
 		printf("\nIs sorted!\n");
 	else

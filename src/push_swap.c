@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:15 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/28 13:23:02 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:35:09 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,10 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	push_to_b(stack_a, stack_b);
 	sort_three(stack_a);
-/*	while (*stack_b)
-	{
-		get_target(stack_a, stack_b);//TODO
-		get_cost(stack_a, stack_b);//TODO
+	//while (*stack_b)
+	//{
+		get_target(stack_a, stack_b);
+		/*get_cost(stack_a, stack_b);//TODO
 		do_cheapest_move(stack_a, stack_b);//TODO
 	}
 	if (!is_sorted(stack_a))

@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:48:56 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/28 13:23:11 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:04:57 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ void	get_current_pos(t_stack **stack_a, t_stack **stack_b)
 int	find_min_idx(t_stack **stack)
 {
 	int	min;
+	int	pos;
 	t_stack	*tmp;
 
 	min = INT_MAX;
+	pos = 0;
 	tmp = *stack;
 	while (tmp)
 	{
@@ -48,7 +50,14 @@ int	find_min_idx(t_stack **stack)
 			min = tmp->index;
 		tmp = tmp->next;
 	}
-	return (min);
+	tmp = *stack;
+	while(tmp)
+	{
+		if (tmp->index == min)
+			pos = tmp->current_pos;
+		tmp = tmp->next;
+	}
+	return (pos);
 }
 
 void	get_target(t_stack **stack_a, t_stack **stack_b)
@@ -64,6 +73,7 @@ void	get_target(t_stack **stack_a, t_stack **stack_b)
 	while(tmp_b)
 	{
 		tmp_a = *stack_a;
+		p_hold = INT_MAX;
 		while (tmp_a)
 		{
 			if (tmp_a->index > tmp_b->index && tmp_a->index < p_hold)
