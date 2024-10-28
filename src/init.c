@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:40:36 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/16 15:19:36 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:22:42 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	init_values(t_stack **stack)
 	while (tmp)
 	{
 		tmp->index = -1;
-		tmp->pos = -1;
+		tmp->current_pos = -1;
 		tmp->target_pos = -1;
 		tmp->cost_a = -1;
 		tmp->cost_b = -1;

@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:45 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/18 13:16:35 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:23:32 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct	s_stack
 {
 	int	value;
 	int	index;
-	int	pos;
+	int	current_pos;
 	int	target_pos;
 	int	cost_a;
 	int	cost_b;
@@ -70,6 +70,9 @@ int	find_max(t_stack **stack);
 void	sort_three(t_stack **stack_a);
 void	big_sort(t_stack **stack_a, t_stack **stack_b);
 void	push_to_b(t_stack **stack_a, t_stack **stack_b);
+void	get_target(t_stack **stack_a, t_stack **stack_b);
+void	get_current_pos(t_stack **stack_a, t_stack **stack_b);
+int	find_min_idx(t_stack **stack);
 
 //FREE
 void	free_stack(t_stack **stack);
