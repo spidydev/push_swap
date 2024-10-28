@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:48:31 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/28 13:39:19 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:56:30 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 	push_swap(&stack_a, &stack_b); //TODO
 	printf("\n--STACKS--\n");
 	print_visual_stacks(stack_a, stack_b);
-	t_stack *tmpa = stack_a;
+	/*t_stack *tmpa = stack_a;
 	t_stack *tmpb = stack_b;
 	printf("\nSTACK A POSITIONS + INDEX\n");
 	while (tmpa)
@@ -90,8 +90,10 @@ int	main(int argc, char **argv)
 	while (tmpb)
 	{
 		printf("%d node target position in A is: %d.\n", tmpb->value, tmpb->target_pos);
+		printf("%d node cost_b is: %d.\n", tmpb->value, tmpb->cost_b);
+		printf("%d node cost_a is: %d.\n\n", tmpb->value, tmpb->cost_a);
 		tmpb = tmpb->next;
-	}
+	}*/
 	if (is_sorted(&stack_a))
 		printf("\nIs sorted!\n");
 	else

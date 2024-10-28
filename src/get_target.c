@@ -6,32 +6,23 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:48:56 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/28 14:04:57 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:53:54 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	get_current_pos(t_stack **stack_a, t_stack **stack_b)
+void	get_current_pos(t_stack **stack)
 {
 	int	i;
-	int	j;
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
+	t_stack	*tmp;
 
 	i = 0;
-	j = 0;
-	tmp_a = *stack_a;
-	tmp_b = *stack_b;
-	while (tmp_a)
+	tmp = *stack;
+	while (tmp)
 	{
-		tmp_a->current_pos = i++;
-		tmp_a = tmp_a->next;
-	}
-	while (tmp_b)
-	{
-		tmp_b->current_pos = j++;
-		tmp_b = tmp_b->next;
+		tmp->current_pos = i++;
+		tmp = tmp->next;
 	}
 }
 
@@ -69,7 +60,8 @@ void	get_target(t_stack **stack_a, t_stack **stack_b)
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
 	p_hold = INT_MAX;
-	get_current_pos(stack_a, stack_b);
+	get_current_pos(stack_a);
+	get_current_pos(stack_b);
 	while(tmp_b)
 	{
 		tmp_a = *stack_a;
