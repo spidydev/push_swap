@@ -69,13 +69,13 @@ t_stack	**stack_init(t_stack **stack_a, char **argv, int argc)
 	nbr = 0;
 	while (i < argc)
 	{
-		substring = ft_split(argv[i], 32); //TOLINK
+		substring = ft_split(argv[i], 32);
 		j = 0;
 		while (substring[j])
 		{
 			if (!ft_is_number(substring[j]) || !ft_is_int(substring[j]))
 				free_and_exit(stack_a, NULL);
-			nbr = ft_atoi(substring[j]); //TOLINK
+			nbr = ft_atoi(substring[j]);
 			if (check_duplicate(stack_a, nbr))
 				free_and_exit(stack_a, NULL);
 			stack_add_back(stack_a, ft_new_node(nbr));

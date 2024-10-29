@@ -30,7 +30,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	if (!stack_b || !*stack_b)
 		return ;
 	ft_push(stack_a, stack_b);
-	printf("pa\n"); // FT_ TODO
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack **stack_b, t_stack **stack_a)
@@ -38,5 +38,5 @@ void	pb(t_stack **stack_b, t_stack **stack_a)
 	if (!stack_a || !*stack_a)
 		return ;
 	ft_push(stack_b, stack_a);
-	printf("pb\n"); // FT_ TODO
+	ft_printf("pb\n");
 }

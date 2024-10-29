@@ -33,7 +33,7 @@ void	ra(t_stack **stack_a)
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	ft_rotate(stack_a);
-	printf("ra\n"); //FT_ 
+	ft_printf("ra\n");
 }
 
 void	rb(t_stack **stack_b)
@@ -41,7 +41,7 @@ void	rb(t_stack **stack_b)
 	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	ft_rotate(stack_b);
-	printf("rb\n"); //FT_ 
+	ft_printf("rb\n");
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
@@ -50,5 +50,5 @@ void	rr(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	printf("rr\n"); //FT_ 
+	ft_printf("rr\n");
 }

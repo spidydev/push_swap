@@ -33,7 +33,7 @@ void	rra(t_stack **stack_a)
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	ft_reverse_rotate(stack_a);
-	printf("rra\n"); //FT_ TODO
+	ft_printf("rra\n");
 }
 
 void	rrb(t_stack **stack_b)
@@ -41,7 +41,7 @@ void	rrb(t_stack **stack_b)
 	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	ft_reverse_rotate(stack_b);
-	printf("rrb\n"); //FT_ TODO
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
@@ -50,5 +50,5 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
-	printf("rrr\n"); //FT_ TODO
+	ft_printf("rrr\n");
 }

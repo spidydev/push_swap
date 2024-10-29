@@ -43,7 +43,7 @@ bool	ft_is_number(char *s)
 	if (s[i] == '+' || s[i] == '-')
 		i++;
 	while (s[i])
-		if (!isdigit(s[i++]))//FT_ TODO
+		if (!ft_isdigit(s[i++]))
 			return (0);
 	return (1);
 }

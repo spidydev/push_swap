@@ -24,10 +24,10 @@ int	main(int argc, char **argv)
 	stack_a = *stack_init(&stack_a, argv, argc);
 	if (!stack_a)
 	{
-		printf("Error\n"); //TODO libft+printf
+		ft_printf("Error\n");
 		exit(1);
 	}
-	push_swap(&stack_a, &stack_b); //TODO
+	push_swap(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

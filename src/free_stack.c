@@ -35,6 +35,6 @@ void	free_and_exit(t_stack **stack_a, t_stack **stack_b)
 		free_stack(stack_a);
 	if (!stack_b || (*stack_b))
 		free_stack(stack_b);
-	printf("Error\n"); //ft_printf
+	ft_printf("Error\n");
 	exit(1);
 }

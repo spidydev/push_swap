@@ -29,7 +29,7 @@ void	sa(t_stack **stack_a)
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	ft_swap(stack_a);
-	printf("sa\n"); //FT_ TODO
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack **stack_b)
@@ -37,14 +37,14 @@ void	sb(t_stack **stack_b)
 	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	ft_swap(stack_b);
-	printf("sb\n"); //FT_ TODO
+	ft_printf("sb\n");
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	if (!*stack_a || !(*stack_a)->next || !*stack_b || !(*stack_b)->next) //depende del algoritmo?
+	if (!*stack_a || !(*stack_a)->next || !*stack_b || !(*stack_b)->next)
 		return ;
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	printf("ss\n");//FT_ TODO
+	ft_printf("ss\n");
 }
