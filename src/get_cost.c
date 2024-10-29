@@ -15,8 +15,8 @@
 void	get_cost(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp_b;
-	int	len_a;
-	int	len_b;
+	int		len_a;
+	int		len_b;
 
 	tmp_b = *stack_b;
 	len_a = stack_len(stack_a);

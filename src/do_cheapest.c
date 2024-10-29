@@ -22,9 +22,9 @@ static int	ft_abs(int n)
 void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
-	int	low_cost;
-	int	cost_a;
-	int	cost_b;
+	int		low_cost;
+	int		cost_a;
+	int		cost_b;
 
 	tmp = *stack_b;
 	low_cost = INT_MAX;

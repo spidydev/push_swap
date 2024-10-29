@@ -22,15 +22,14 @@
 # include <limits.h>
 # include "../libft/libft.h"
 
-
-typedef struct	s_stack
+typedef struct s_stack
 {
-	int	value;
-	int	index;
-	int	current_pos;
-	int	target_pos;
-	int	cost_a;
-	int	cost_b;
+	int				value;
+	int				index;
+	int				current_pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -63,17 +62,17 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 //PUSH_SWAP
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
-int	stack_len(t_stack **stack);
+int		stack_len(t_stack **stack);
 void	get_index(t_stack **stack_a);
 bool	is_sorted(t_stack **stack_a);
-int	find_max(t_stack **stack);
+int		find_max(t_stack **stack);
 void	sort_three(t_stack **stack_a);
 void	big_sort(t_stack **stack_a, t_stack **stack_b);
 void	push_to_b(t_stack **stack_a, t_stack **stack_b);
 void	clear_target(t_stack **stack);
 void	get_target(t_stack **stack_a, t_stack **stack_b);
 void	get_current_pos(t_stack **stack);
-int	find_min_idx(t_stack **stack);
+int		find_min_idx(t_stack **stack);
 void	get_cost(t_stack **stack_a, t_stack **stack_b);
 void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 void	push_back(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);

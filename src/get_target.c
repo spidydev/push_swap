@@ -14,7 +14,7 @@
 
 void	get_current_pos(t_stack **stack)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	i = 0;
@@ -40,8 +40,8 @@ void	clear_target(t_stack **stack)
 
 int	find_min_idx(t_stack **stack)
 {
-	int	min;
-	int	pos;
+	int		min;
+	int		pos;
 	t_stack	*tmp;
 
 	min = INT_MAX;
@@ -54,7 +54,7 @@ int	find_min_idx(t_stack **stack)
 		tmp = tmp->next;
 	}
 	tmp = *stack;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->index == min)
 			pos = tmp->current_pos;
@@ -67,14 +67,13 @@ void	get_target(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
-	int	p_hold;
+	int		p_hold;
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
-	p_hold = INT_MAX;
 	get_current_pos(stack_a);
 	get_current_pos(stack_b);
-	while(tmp_b)
+	while (tmp_b)
 	{
 		tmp_a = *stack_a;
 		p_hold = INT_MAX;

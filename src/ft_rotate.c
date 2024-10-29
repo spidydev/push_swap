@@ -19,13 +19,13 @@ void	ft_rotate(t_stack **stack)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	node = *stack; // Guardamos la referencia al primer nodo
-	*stack = (*stack)->next; // Colocamos el 2o nodo como primero
-	last = *stack; // Guardamos referencia para iterar
-	while (last->next) // Iteramos con la referencia
+	node = *stack;
+	*stack = (*stack)->next;
+	last = *stack;
+	while (last->next)
 		last = last->next;
-	last->next = node; // Apuntamos con el ultimo nodo al nodo que guarda el antiguo primer nodo
-	node->next = NULL; // Apuntamos con el antiguo primer nodo a NULL
+	last->next = node;
+	node->next = NULL;
 }
 
 void	ra(t_stack **stack_a)

@@ -12,18 +12,17 @@
 
 #include "push_swap.h"
 
-
 void	ft_push(t_stack **dst, t_stack **src)
 {
 	t_stack	*node;
 
 	if (!src || !*src)
 		return ;
-	node = *src; // Guardamos el primer nodo de src en una temporal
-	*src = (*src)->next; // Cambiamos el primer nodo de src al segundo
+	node = *src;
+	*src = (*src)->next;
 	if (dst)
-		node->next = *dst; // Colocamos el nodo temporal al principio de dst
-	*dst = node; // Cambiamos la referencia del primer nodo dst al nodo temporal
+		node->next = *dst;
+	*dst = node;
 }
 
 void	pa(t_stack **stack_a, t_stack **stack_b)
@@ -35,7 +34,7 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 }
 
 void	pb(t_stack **stack_b, t_stack **stack_a)
-{	
+{
 	if (!stack_a || !*stack_a)
 		return ;
 	ft_push(stack_b, stack_a);

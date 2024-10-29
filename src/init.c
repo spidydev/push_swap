@@ -12,16 +12,21 @@
 
 #include "push_swap.h"
 
-t_stack *ft_new_node(int value)
+t_stack	*ft_new_node(int value)
 {
-        t_stack *new;
+	t_stack	*new;
 
-        new = (t_stack *)malloc(sizeof(t_stack));
-        if(!new)
-                return (NULL);
-        new->value = value;
-        new->next = NULL;
-        return (new);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->value = value;
+	new->index = -1;
+	new->current_pos = -1;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
+	new->next = NULL;
+	return (new);
 }
 
 void	stack_add_back(t_stack **stack, t_stack *new)
@@ -53,28 +58,12 @@ void	free_substr(char **substr)
 	free(substr);
 }
 
-static void	init_values(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	tmp = *stack;
-	while (tmp)
-	{
-		tmp->index = -1;
-		tmp->current_pos = -1;
-		tmp->target_pos = -1;
-		tmp->cost_a = -1;
-		tmp->cost_b = -1;
-		tmp = tmp->next;
-	}
-}
-
 t_stack	**stack_init(t_stack **stack_a, char **argv, int argc)
 {
 	char	**substring;
-	int	nbr;
-	int	i;
-	int	j;
+	int		nbr;
+	int		i;
+	int		j;
 
 	i = 1;
 	nbr = 0;
@@ -95,6 +84,5 @@ t_stack	**stack_init(t_stack **stack_a, char **argv, int argc)
 		free_substr(substring);
 		i++;
 	}
-	init_values(stack_a);
 	return (stack_a);
 }

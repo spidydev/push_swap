@@ -14,8 +14,8 @@
 
 void	ft_reverse_rotate(t_stack **stack)
 {
-	t_stack *prev_last;
-	t_stack *last;
+	t_stack	*prev_last;
+	t_stack	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;

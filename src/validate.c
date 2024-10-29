@@ -13,24 +13,24 @@
 #include "push_swap.h"
 #include <ctype.h>
 
-static long long int     ft_atoll(const char *str)
+static long long int	ft_atoll(const char *str)
 {
-        long long int     n;
-        int     sign;
+	long long int	n;
+	int				sign;
 
-        n = 0;
-        sign = 1;
-        while ((*str >= 9 && *str <= 13) || *str == 32)
-                str++;
-        if (*str == '-' || *str == '+')
-        {
-                if (*str == '-')
-                        sign *= -1;
-                str++;
-        }
-        while (*str >= 48 && *str <= 57)
-                n = n * 10 + *str++ - 48;
-        return (n * sign);
+	n = 0;
+	sign = 1;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (*str >= 48 && *str <= 57)
+		n = n * 10 + *str++ - 48;
+	return (n * sign);
 }
 
 bool	ft_is_number(char *s)
@@ -63,7 +63,7 @@ bool	ft_is_int(char *s)
 
 bool	check_duplicate(t_stack **stack_a, int nbr)
 {
-	t_stack *current;
+	t_stack	*current;
 
 	if (!stack_a || !(*stack_a))
 		return (0);

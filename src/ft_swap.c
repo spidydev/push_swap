@@ -18,10 +18,10 @@ void	ft_swap(t_stack **stack)
 
 	if (!*stack || !(*stack)->next)
 		return ;
-	node = *stack; // Almacenamos referencia a la cabeza (1er nodo)
-	*stack = (*stack)->next; // La cabeza ahora es el siguiente nodo (2o)
-	node->next = (*stack)->next; // Apuntamos con el nodo temporal a donde apunta el antiguo segundo nodo
-	(*stack)->next = node; // Apuntamos con el antiguo segundo nodo al nodo temporal
+	node = *stack;
+	*stack = (*stack)->next;
+	node->next = (*stack)->next;
+	(*stack)->next = node;
 }
 
 void	sa(t_stack **stack_a)

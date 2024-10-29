@@ -12,23 +12,23 @@
 
 #include "push_swap.h"
 
-static void	do_rrr(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+static void	do_rrr(t_stack **stack_a, t_stack **stack_b, int *c_a, int *c_b)
 {
-	while ((*cost_a) < 0 && (*cost_b) < 0)
+	while ((*c_a) < 0 && (*c_b) < 0)
 	{
 		rrr(stack_a, stack_b);
-		(*cost_a)++;
-		(*cost_b)++;
+		(*c_a)++;
+		(*c_b)++;
 	}
 }
 
-static void	do_rr(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+static void	do_rr(t_stack **stack_a, t_stack **stack_b, int *c_a, int *c_b)
 {
-	while ((*cost_a) > 0 && (*cost_b) > 0)
+	while ((*c_a) > 0 && (*c_b) > 0)
 	{
 		rr(stack_a, stack_b);
-		(*cost_a)--;
-		(*cost_b)--;
+		(*c_a)--;
+		(*c_b)--;
 	}
 }
 
