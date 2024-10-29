@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 11:48:31 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/29 14:46:50 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:15:59 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-	{
-		printf("Error\n"); //TODO libft+printf
-		exit(1);
-	}
+		exit(0);
 	stack_a = *stack_init(&stack_a, argv, argc);
 	if (!stack_a)
 	{
