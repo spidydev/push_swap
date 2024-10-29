@@ -6,7 +6,7 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:48:56 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/28 18:53:54 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/29 13:25:11 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ void	get_current_pos(t_stack **stack)
 	while (tmp)
 	{
 		tmp->current_pos = i++;
+		tmp = tmp->next;
+	}
+}
+
+void	clear_target(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = *stack;
+	while (tmp)
+	{
+		tmp->target_pos = -1;
 		tmp = tmp->next;
 	}
 }
