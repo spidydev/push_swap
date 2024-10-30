@@ -6,7 +6,7 @@
 #    By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 16:01:23 by calbar-c          #+#    #+#              #
-#    Updated: 2024/10/29 18:48:41 by calbar-c         ###   ########.fr        #
+#    Updated: 2024/10/30 12:14:13 by calbar-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,13 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc -Wall -Wextra -Werror
 
+all: $(NAME)
+
 $(LIBFT):
 	@$(MAKE) -s -C libft
 
 $(NAME) : $(OBJ) $(LIBFT)
 	@$(CC) $(OBJ) $(LIBFT) -o $@
-
-all: $(NAME)
 
 clean:
 	@$(MAKE) -s -C libft clean
