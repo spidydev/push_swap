@@ -6,14 +6,13 @@
 /*   By: calbar-c <calbar-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:23:45 by calbar-c          #+#    #+#             */
-/*   Updated: 2024/10/29 14:45:52 by calbar-c         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:00:09 by calbar-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h> //?
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
